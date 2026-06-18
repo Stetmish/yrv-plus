@@ -1,0 +1,44 @@
+set_global_assignment   -name DEVICE                    10M50DAF484C7G
+set_global_assignment   -name VERILOG_INPUT_VERSION     SYSTEMVERILOG_2005
+set_global_assignment   -name NUM_PARALLEL_PROCESSORS   4
+set_global_assignment   -name PROJECT_OUTPUT_DIRECTORY  .
+
+set_global_assignment   -name TOP_LEVEL_ENTITY          top
+set_global_assignment   -name SEARCH_PATH               ..
+set_global_assignment   -name SEARCH_PATH               ../../../design
+set_global_assignment   -name VERILOG_FILE              top.sv
+set_global_assignment   -name SDC_FILE                  top.sdc
+
+set_global_assignment   -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+
+set_instance_assignment -name IO_STANDARD               "3.3-V LVTTL" -to *
+set_instance_assignment -name IO_STANDARD               "3.3 V Schmitt Trigger" -to key[0]
+set_instance_assignment -name IO_STANDARD               "3.3 V Schmitt Trigger" -to key[1]
+
+set_location_assignment PIN_N5   -to adc_clk_10
+set_location_assignment PIN_P11  -to max10_clk1_50
+set_location_assignment PIN_N14  -to max10_clk2_50
+
+set_location_assignment PIN_AB9  -to key[0]
+set_location_assignment PIN_AA9  -to key[1]
+
+set_location_assignment PIN_AB16 -to sw[0]
+set_location_assignment PIN_Y16  -to sw[1]
+set_location_assignment PIN_V16  -to sw[2]
+set_location_assignment PIN_AB17 -to sw[3]
+
+set_location_assignment PIN_AA16 -to led[0]
+set_location_assignment PIN_AB15 -to led[1]
+set_location_assignment PIN_AA15 -to led[2]
+set_location_assignment PIN_AA14 -to led[3]
+
+set_location_assignment PIN_D19  -to rgb_led_data
+
+set_location_assignment PIN_AB8  -to tmd_gpio[0]
+set_location_assignment PIN_AA8  -to tmd_gpio[1]
+set_location_assignment PIN_AA5  -to tmd_gpio[2]
+set_location_assignment PIN_AB5  -to tmd_gpio[3]
+set_location_assignment PIN_AB7  -to tmd_gpio[4]
+set_location_assignment PIN_AA7  -to tmd_gpio[5]
+set_location_assignment PIN_AB6  -to tmd_gpio[6]
+set_location_assignment PIN_AA6  -to tmd_gpio[7]
